@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OJT Blog | Danielle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        .progress-fill { animation: grow 2s ease-out forwards; }
+        @keyframes grow { from { width: 0; } to { width: 85%; } }
+
+        .slideshow-img { position: absolute; inset: 0; opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .slideshow-img:first-child { opacity: 1; }
+        .group:hover .img-1 { opacity: 0; }
+        .group:hover .img-2 { opacity: 1; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Modal Animation */
+        #modal { transition: opacity 0.3s ease-in-out; }
+        #modal.hidden { display: none; opacity: 0; }
+        #modal.flex { display: flex; opacity: 1; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <nav class="glass-nav fixed w-full z-[100] border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-extrabold tracking-tighter hover:opacity-70 transition">DANIELLE.</a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-black transition">Home</a>
+                <a href="tech.html" class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-slate-800 transition">Technical</a>
+                <a href="business.html" class="hover:text-black transition">Business</a>
+                <a href="creative.html" class="hover:text-black transition">Creative</a>
+                <a href="#about-journey" class="hover:text-black transition">About</a>
+            </div>
+        </div>
+    </nav>
+<main>
+    <section id="about-journey" class="max-w-7xl mx-auto px-6 pt-32 pb-12">
+        <a href="tech.html" class="text-blue-600 text-sm font-bold uppercase tracking-widest mb-8 inline-block hover:underline">
+            <i class="fas fa-arrow-left mr-2"></i> Back
+        </a>
+        
+        <div class="flex flex-col md:flex-row items-center gap-12 bg-white p-8 md:p-12 rounded-[3rem] border border-slate-100 shadow-sm">
+            <div class="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden bg-slate-200 shadow-2xl rotate-2 shrink-0">
+                <img src="./images/profile.jpg" alt="Danielle" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">My Internship Journey.</h1>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                    Welcome to my OJT/Internship Blog, where I share my experiences, learnings, projects, and growth throughout my journey as an aspiring Full Stack Developer.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6 pb-24 flex flex-col lg:flex-row gap-12">
+        <aside class="lg:w-80 shrink-0 lg:sticky lg:top-32 lg:h-fit">
+            <div class="bg-slate-900 rounded-3xl p-6 shadow-xl mb-8 text-white">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Total Hours</span>
+                    <span class="text-blue-400 font-bold text-sm">98%</span>
+                </div>
+                <div class="text-3xl font-black mb-2">468<span class="text-lg text-slate-500">/ 486</span></div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden mb-4">
+                    <div class="progress-fill h-full bg-blue-500" style="width: 98%;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex-grow space-y-12">
+
+    <!-- WEEK 01 -->
+    <article 
+        onclick="openModal(
+            'Week 01 Entry',
+            'Starting the Journey',
+            'This week marked the beginning of my internship journey. I familiarized myself with the people we will be working with, and explored the new environment on our first day. First, we attenededa quick orientation from the HR department to gives us more information about DOST V, and also for us to be well guided by their rules and work setups. After the orientation, our first task at DOST V was assisting in the computer setup for the Accounting and Administration Unit, ensuring that the workstation was properly configured and ready for office use. A meeting was conducted for us to discuss about the project that we will also be working on during our whole OJT journey.',
+            [
+            './images/weeklyphotos/day1.1.jpg',
+            './images/weeklyphotos/day1.2.jpg',
+            './images/weeklyphotos/day1.3.jpg',
+            './images/weeklyphotos/day1.4.jpg',
+            './images/weeklyphotos/day1.5.jpg',
+            './images/weeklyphotos/day1.6.jpg'
+        ]
+        
+        )"
+        class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day1.4.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 01 Entry</span>
+                    <span class="text-slate-400 text-xs italic">Feb 20, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Starting the Journey</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 02 -->
+    <article 
+        onclick="openModal(
+            'Week 02 Entry',
+            'Second Week',
+            'In Week 2 (February 23–27), I was assigned to multiple technical and documentation tasks. I helped with PC setup, network installation, and cable management at the Scholarship Unit. I also participated in the first DOCS team meeting, where we brainstormed and planned the proposed system. During this week, I assisted in creating the DOCS flowchart, contributed to Figma wireframe mockups, and attended the initial interview with the RMU Head. Additionally, I served as a proctor for the SRS II assessment exam and presented the initial DOCS flowchart to MIS personnel for feedback. A follow-up meeting was also conducted to refine the project direction.',
+            [
+            './images/weeklyphotos/day1.2.jpg',
+            './images/weeklyphotos/day2.1.jpg',
+            './images/weeklyphotos/day2.2.jpg',
+            './images/weeklyphotos/days2.3.jpg',
+            './images/weeklyphotos/day2.4.jpg',
+            './images/weeklyphotos/day2.5.jpg',
+            './images/weeklyphotos/day2.6.jpg',
+            './images/weeklyphotos/day2.7.jpg'
+            
+            ]
+        )"
+        class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day2.7.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 02 Entry</span>
+                    <span class="text-slate-400 text-xs italic">Febraury 23-27, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Second Week</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 03 -->
+    <article 
+        onclick="openModal(
+            'Week 03 Entry',
+            'DOCS 2.0 in the Making', 
+            'In Week 3 (March 2–6), I supported the revision of the DOCS process flow and participated in its presentation to MIS personnel. I also continued assisting in UI/UX design improvements and attended discussions with the RMU Head regarding the updated workflow. Wireframe revisions were also completed during this period.',
+            [
+            
+            './images/weeklyphotos/day3.1.jpg',
+            './images/weeklyphotos/day3.2.jpg',
+            './images/weeklyphotos/day3.3.jpg',
+            './images/weeklyphotos/day3.4.jpg',
+            './images/weeklyphotos/day3.5.jpg',
+            './images/weeklyphotos/day3.6.jpg',
+            './images/weeklyphotos/day3.7.jpg',
+            './images/weeklyphotos/day3.8.jpg'
+            
+            ]
+        )"
+        class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day3.7.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 03 Entry</span>
+                    <span class="text-slate-400 text-xs italic">March 2-6, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">DOCS 2.0 in the Making</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 04 -->
+    <article 
+        onclick="openModal(
+            'Week 04 Entry',
+            'DOCS 2.0 Setup',
+            'During Week 4 (March 9–13), we focused on system setup and development preparation. I assisted in configuring the Laravel framework and GitHub repository. I also contributed to the frontend development of the MIS/Superadmin interface and participated in meetings with MIS personnel to present progress updates. During the meeting they assigned tasks for us on the next day event.',
+            [
+            
+            './images/weeklyphotos/day4.1.jpg',
+            './images/weeklyphotos/day4.2.jpg',
+            './images/weeklyphotos/day4.3.jpg',
+            './images/weeklyphotos/day4.4.jpg',
+            './images/weeklyphotos/day4.5.jpg',
+            './images/weeklyphotos/day4.6.jpg',
+            './images/weeklyphotos/day4.7.jpg',
+            './images/weeklyphotos/day4.8.jpg'
+            
+            ]
+        )"
+        class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day4.2.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 04 Entry</span>
+                    <span class="text-slate-400 text-xs italic">March 9-13, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">DOCS 2.0 Setup</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 05 -->
+<article 
+    onclick="openModal(
+        'Week 05 Entry',
+        'Frontend Development & Events',
+        'During Week 5, our team continued focusing on the frontend development of the DOCS 2.0 system. I spent most of the week assisting in designing and improving the interfaces for the MIS, Superadmin, RMU, and Regular Unit modules. This experience helped me understand how different users interact with the system and how important user-friendly interfaces are in making workflows more efficient. I also learned more about organizing layouts, improving navigation, and ensuring that the pages were visually clean and functional. Aside from system development, I was also given the opportunity to create a certificate automation system for the “Bicol Goes IPv6: Enabling the Future Internet” event. Through this task, I learned how automation can significantly reduce manual work and improve efficiency during events with many participants. During the event itself, I also assisted in facilitating an icebreaker session, which helped me improve my communication and confidence in handling participants and working with a team in an event environment.',
+        [
+            './images/weeklyphotos/day 5.1.jpg',
+            './images/weeklyphotos/day5.2.jpg',
+            './images/weeklyphotos/day5.3.jpg',
+            './images/weeklyphotos/day5.4.jpg',
+            './images/weeklyphotos/day5.5.jpg',
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day5.3.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 05 Entry</span>
+                    <span class="text-slate-400 text-xs italic">March 16-19, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Frontend Development & Events</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 06 -->
+<article 
+    onclick="openModal(
+        'Week 06 Entry',
+        'System Enhancements & Events',
+        'During Week 6, we continued collaborating on the DOCS 2.0 project while improving other related tasks assigned to us. One of the major tasks I handled was revising the application script for the certificate automation system to support real-time distribution. This allowed certificates to be generated and distributed more efficiently, making the process faster and more organized for the participants. Aside from development tasks, I also participated in the Women’s Bazaar as a merchant. This experience exposed me to event participation and customer interaction, allowing me to develop communication and organizational skills outside technical work. Throughout the week, our team continuously coordinated and collaborated to ensure that the progress of the DOCS system remained on track.',
+        [
+            './images/weeklyphotos/day6.1.jpg',
+            './images/weeklyphotos/day6.2.jpg',
+            './images/weeklyphotos/day6.3.jpg',
+            './images/weeklyphotos/day6.4.jpg'
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day6.2.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 06 Entry</span>
+                    <span class="text-slate-400 text-xs italic">March 23-26, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">System Enhancements & Events</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+    <!-- WEEK 07 -->
+<article 
+    onclick="openModal(
+        'Week 07 Entry',
+        'Progress Updates & Hybrid Setup',
+        'During Week 7, we focused on continuing our assigned tasks and improving different parts of the DOCS 2.0 project before the Holy Week break. We spent time reviewing pending tasks, refining features, and preparing updates regarding the progress of the system. A progress report presentation was also conducted with the MIS personnel, where we discussed the current status of the project and received feedback regarding the development of the system. This experience helped me become more familiar with presenting project updates and understanding the importance of regular monitoring and communication in software development. In addition, a work-from-home setup was implemented before Holy Week. Despite working remotely, our team remained productive and coordinated online to continue completing pending tasks and project requirements.',
+        [
+            './images/weeklyphotos/day7.1.jpg',
+            './images/weeklyphotos/day7.2.jpg',
+            './images/weeklyphotos/day7.3.jpg',
+            './images/weeklyphotos/day7.4.jpg',
+            
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day7.3.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 07 Entry</span>
+                    <span class="text-slate-400 text-xs italic">March 30-April 3, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Progress Updates & Hybrid Setup</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+   
+    <!-- WEEK 08 -->
+<article 
+    onclick="openModal(
+        'Week 08 Entry',
+        'Backend Development Progress',
+        'During Week 8, our team resumed work after the Holy Week break and continued developing the backend functionalities of DOCS 2.0. We focused on improving the system’s core functions and ensuring that different modules were properly connected and functional. Another progress presentation with the MIS personnel was also conducted to provide updates regarding the current development status of the project. Through these discussions, we received suggestions and feedback that helped us identify areas that still needed improvement. Part of the week was also conducted under a work-from-home setup, where we continued collaborating virtually to accomplish our assigned tasks and maintain project progress. We were also tasked to clean some of the scraps inside the MIS office.',
+        [
+           './images/weeklyphotos/day7.5.jpg',
+            './images/weeklyphotos/day7.6.jpg',
+            './images/weeklyphotos/day8.jpg',
+            './images/weeklyphotos/day8.1.jpg',
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day8.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 08 Entry</span>
+                    <span class="text-slate-400 text-xs italic">April 6-10, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Backend Development Progress</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 09 -->
+<article 
+    onclick="openModal(
+        'Week 09 Entry',
+        'Development & DOST Pitching Event',
+        'During Week 9, we continued building and improving the DOCS 2.0 system by working on our assigned tasks and revisions. Our team coordinated closely to ensure that the project continued progressing according to the required objectives and timeline. One of the highlights of the week was participating in the pitching event hosted by DOST V at Vela Hotel. Attending the event allowed me to observe how innovative ideas and systems are presented professionally to different audiences. It also gave me insights into communication, confidence, and teamwork during presentations and pitching activities. A work-from-home setup was also implemented during the week, allowing us to continue our tasks remotely while maintaining communication and collaboration with the team.',
+        [
+             './images/weeklyphotos/day9.1.jpg',
+            './images/weeklyphotos/day9.2.jpg',
+            './images/weeklyphotos/day9.3.jpg',
+            './images/weeklyphotos/day9.4.jpg',
+            './images/weeklyphotos/day9.5.jpg',
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day9.2.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 09 Entry</span>
+                    <span class="text-slate-400 text-xs italic"April 13-17, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Development & DOST Pitching Event</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 10 -->
+<article 
+    onclick="openModal(
+        'Week 10 Entry',
+        'Work From Home Setup Week',
+        'During Week 10, our team continued developing and refining the DOCS 2.0 system while in a WFH setup due to a 3-day transport strike. We focused on improving system functions, fixing issues, and enhancing the workflow of the platform based on previous feedback and observations. We also conducted another progress report presentation with the MIS personnel to discuss the latest updates and improvements made in the system. Through these meetings, we were able to receive guidance and recommendations that helped us better align the system with the intended office workflow and user needs. This week helped strengthen my understanding of teamwork, continuous improvement, and the importance of communication between developers and stakeholders.',
+        [
+            './images/weeklyphotos/day10.1.png',
+            './images/weeklyphotos/day10.2.png',
+            './images/weeklyphotos/day10.3.png',
+            
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day10.3.png" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 10 Entry</span>
+                    <span class="text-slate-400 text-xs italic">April 20-14, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">System Refinement & Progress Review</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 11 -->
+<article 
+    onclick="openModal(
+        'Week 11 Entry',
+        'System Revisions & Improvements',
+        'During Week 11, we continued working on the development of DOCS 2.0 while focusing on revisions and refinements requested by the MIS personnel. Our team reviewed existing features and made improvements to ensure that the system would function more efficiently and effectively. We also had discussions with the MIS personnel regarding the current development progress of the project. These consultations allowed us to identify necessary adjustments and understand how the system could better support document management processes within the office. This week emphasized the importance of adaptability, teamwork, and responding to feedback during the software development process.',
+        [
+            './images/weeklyphotos/day11.1.jpg',
+            './images/weeklyphotos/day11.2.jpg',
+            './images/weeklyphotos/day11.3.jpg',
+            './images/weeklyphotos/day11.4.jpg',
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day11.3.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 11 Entry</span>
+                    <span class="text-slate-400 text-xs italic">April 27-30, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">System Revision & Improvements</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+    <!-- WEEK 12 -->
+<article 
+    onclick="openModal(
+        'Week 12 Entry',
+        'Internovation Preparation & Finalization',
+        'During Week 12, our team focused on polishing and finalizing several parts of DOCS 2.0. We worked on improving the system’s interface, revising features, and preparing materials needed for the upcoming Internovation 2026 event. We also started creating the initial PowerPoint presentation for the project. Together with the team, we discussed revisions, presentation flow, and ideas that could help us present the system more effectively during the event. Aside from development work, I was assigned as technical support during the Fire Safety and Emergency Response Training conducted by the Bureau of Fire Protection (BFP). This task allowed me to assist in ensuring that the technical aspects of the event ran smoothly. During the work-from-home setup on May 9, we also had a quick online meeting with our coach through Discord to discuss our pending tasks and preparations for Internovation 2026. Despite the remote setup, our team remained coordinated and productive.',
+        [
+            './images/weeklyphotos/day12.3.jpg',
+            './images/weeklyphotos/day12.4.jpg',
+            './images/weeklyphotos/day12.5.jpg',
+            './images/weeklyphotos/day12.6.jpg',
+            './images/weeklyphotos/day12.7.jpg',
+            './images/weeklyphotos/day12.8.jpg',
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day12.5.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 12 Entry</span>
+                    <span class="text-slate-400 text-xs italic">May 4-9, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Internovation Preparation & Finalization</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- WEEK 13 -->
+<article 
+    onclick="openModal(
+        'Week 13 Entry',
+        'Event Participation & Presentation',
+        'During Week 13, I assisted during the TUKDOST 2026 event held at Proxy Hotel Legazpi. Throughout the event, I helped support the activities and ensure that assigned tasks were completed properly. Participating in the event exposed me to professional event coordination and teamwork in a larger organizational setup. On the second day of the event, I also hosted an icebreaker activity for the participants. This experience helped improve my confidence in speaking and interacting with people during formal events. Alongside the event responsibilities, our team continued working on the DOCS 2.0 presentation. We reviewed slides, organized content, and prepared for future presentations related to the project. This week helped me improve both my technical and communication skills while balancing development tasks and event participation.',
+        [
+            './images/weeklyphotos/day13.1.jpg',
+            './images/weeklyphotos/day13.2.jpg',
+            './images/weeklyphotos/day13.3.jpg',
+            './images/weeklyphotos/day13.5.jpg',
+            './images/weeklyphotos/day13.6.jpg',
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
+    
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/day13.5.jpg" class="object-cover w-full h-full">
+            </div>
+
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 13 Entry</span>
+                    <span class="text-slate-400 text-xs italic">May 11-15, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Event Participation & Presentation</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+    
+
+<!-- MODAL -->
+<div id="modal" class="hidden fixed inset-0 z-[200] items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    
+    <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3rem] shadow-2xl relative">
+
+        <button onclick="closeModal()" 
+            class="absolute top-6 right-6 w-12 h-12 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center transition z-10">
+            <i class="fas fa-times text-slate-900"></i>
+        </button>
+
+        <div class="p-8 md:p-12">
+
+            <span id="modal-tag" class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2 block"></span>
+
+            <h2 id="modal-title" class="text-4xl font-black mb-6 tracking-tight"></h2>
+
+            <div id="modal-images" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"></div>
+
+            <div class="prose prose-slate max-w-none">
+                <p id="modal-text" class="text-lg text-slate-600 leading-relaxed"></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</main>
+
+    
+<script>
+    function openModal(tag, title, text, images = []) {
+        document.getElementById('modal').classList.remove('hidden');
+        document.getElementById('modal').classList.add('flex');
+
+        document.getElementById('modal-tag').innerText = tag;
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-text').innerText = text;
+
+        const imagesContainer = document.getElementById('modal-images');
+        imagesContainer.innerHTML = '';
+
+        images.forEach(img => {
+            imagesContainer.innerHTML += `
+                <img src="${img}" 
+                    class="w-full h-72 object-cover rounded-2xl shadow-md">
+            `;
+        });
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.add('hidden');
+        document.getElementById('modal').classList.remove('flex');
+    }
+</script>
+<footer class="py-12 text-center text-slate-400 text-sm bg-white border-t border-slate-100">
+        <p>Built for the journey. &copy; 2026 Danielle.</p>
+    </footer>
+</body>
+</html>
