@@ -27,6 +27,48 @@
             -webkit-backdrop-filter: blur(12px);
         }
 
+        .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148,163,184,.5) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148,163,184,.5);
+    border-radius: 9999px;
+
+    /* Creates spacing from the modal edge */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(100,116,139,.7);
+    background-clip: padding-box;
+}
+
+/* Hide arrows */
+.custom-scrollbar::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* Remove scrollbar corner */
+.custom-scrollbar::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
         /* Modal Animation */
         #modal { transition: opacity 0.3s ease-in-out; }
         #modal.hidden { display: none; opacity: 0; }
@@ -72,11 +114,11 @@
             <div class="bg-slate-900 rounded-3xl p-6 shadow-xl mb-8 text-white">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Total Hours</span>
-                    <span class="text-blue-400 font-bold text-sm">98%</span>
+                    <span class="text-blue-400 font-bold text-sm">100%</span>
                 </div>
-                <div class="text-3xl font-black mb-2">468<span class="text-lg text-slate-500">/ 486</span></div>
-                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden mb-4">
-                    <div class="progress-fill h-full bg-blue-500" style="width: 98%;"></div>
+                <div class="text-3xl font-black mb-2">486<span class="text-lg text-slate-500">/ 486</span></div>
+                <div class="w-full h-2 bg-blue-500 rounded-full overflow-hidden mb-4">
+                    <div class="progress-fill h-full bg-blue-500" "></div>
                 </div>
             </div>
         </aside>
@@ -639,34 +681,49 @@
         </div>
     </article>
 
-
+    <article 
+    onclick="openModal(
+        'Week 14 Entry',
+        'Final Day Internship Presentation & Grand Prize Achievement',
+        'On our final day at DOST Regional Office V, our team presented the completed DOCS 2.0 project to the panel and attendees. During the pitch, we showcased the newly developed and upgraded features of the system, emphasizing how it can improve document management, tracking, and workflow processes within the agency. We highlighted that the benefits of DOCS 2.0 extend beyond DOST employees, as the system can also be adapted and implemented by other government agencies to improve their own document processing and monitoring operations. Presenting the project was both exciting and fulfilling, as it allowed me to demonstrate the knowledge and skills I developed throughout the internship. The experience strengthened my confidence in public speaking, system presentation, and explaining technical concepts to a professional audience. I was honored to be one of the presenters who introduced the capabilities and impact of DOCS 2.0. The highlight of the day was when our team was awarded the Grand Prize for our project presentation. Winning the competition was a rewarding conclusion to our internship journey and served as recognition of the hard work, collaboration, and dedication invested in developing the system. This final experience left a lasting impression on me and reinforced the value of teamwork, innovation, and continuous learning in a professional environment.',
+        [
+            './images/weeklyphotos/lastday2.jpg',
+            './images/weeklyphotos/lastdat3.jpg',
+            './images/weeklyphotos/lastday4.jpg',
+            './images/weeklyphotos/lastday5.jpg',
+            './images/weeklyphotos/lastday6.jpg',
+        ]
+    )"
+    class="group bg-white rounded-[2.5rem] p-4 md:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:scale-[1.01] transition-all cursor-pointer">
     
-
-<!-- MODAL -->
-<div id="modal" class="hidden fixed inset-0 z-[200] items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-    
-    <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3rem] shadow-2xl relative">
-
-        <button onclick="closeModal()" 
-            class="absolute top-6 right-6 w-12 h-12 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center transition z-10">
-            <i class="fas fa-times text-slate-900"></i>
-        </button>
-
-        <div class="p-8 md:p-12">
-
-            <span id="modal-tag" class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2 block"></span>
-
-            <h2 id="modal-title" class="text-4xl font-black mb-6 tracking-tight"></h2>
-
-            <div id="modal-images" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"></div>
-
-            <div class="prose prose-slate max-w-none">
-                <p id="modal-text" class="text-lg text-slate-600 leading-relaxed"></p>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-64 h-64 rounded-3xl overflow-hidden relative shadow-inner bg-slate-100 shrink-0">
+                <img src="./images/weeklyphotos/lastdat3.jpg" class="object-cover w-full h-full">
             </div>
 
+            <div class="py-2">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Week 14 Entry</span>
+                    <span class="text-slate-400 text-xs italic">May 21, 2026</span>
+                </div>
+
+                <h2 class="text-3xl font-black mb-4 leading-tight">Final Day Internship Presentation & Grand Prize Achievement</h2>
+
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Click to read the full log and view more images of my progress this week.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold uppercase tracking-tighter">
+                        Read More <i class="fas fa-chevron-right ml-1"></i>
+                    </span>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </article>
+    
+
+
 
 
 </main>
@@ -700,5 +757,31 @@
 <footer class="py-12 text-center text-slate-400 text-sm bg-white border-t border-slate-100">
         <p>Built for the journey. &copy; 2026 Danielle.</p>
     </footer>
+
+    <!-- MODAL -->
+<div id="modal" class="hidden fixed inset-0 z-[200] items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    
+    <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[1rem] shadow-2xl relative custom-scrollbar">
+
+        <button onclick="closeModal()" 
+            class="absolute top-6 right-6 w-12 h-12 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center transition z-10">
+            <i class="fas fa-times text-slate-900"></i>
+        </button>
+
+        <div class="p-8 md:p-12">
+
+            <span id="modal-tag" class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2 block"></span>
+
+            <h2 id="modal-title" class="text-4xl font-black mb-6 tracking-tight"></h2>
+
+            <div id="modal-images" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"></div>
+
+            <div class="prose prose-slate max-w-none">
+                <p id="modal-text" class="text-lg text-slate-600 leading-relaxed"></p>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
